@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SafeNotice Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="settings-container">
+    <header class="header">
+      <h2>SafeNotice Configuration</h2>
+      <p>Configure institutional verification domains and local LM Studio AI endpoints.</p>
+    </header>
+
+    <div class="card">
+      <h3>Official College Domains</h3>
+      <p class="desc">Links pointing to these domains and their subdomains receive the green <strong>Verified</strong> badge.</p>
+      <div class="row">
+        <input type="text" id="new-domain-input" placeholder="e.g. university.edu">
+        <button id="add-domain-btn" class="btn primary">Add Domain</button>
+      </div>
+      <ul id="domains-container" class="domain-list"></ul>
+    </div>
+
+    <div class="card">
+      <h3>Local LM Studio (AI Explanations)</h3>
+      <p class="desc">SafeNotice uses fast rule-based checks first. When enabled, local LM Studio generates conversational summaries for flagged notices.</p>
+      
+      <div class="checkbox-row">
+        <input type="checkbox" id="ai-toggle">
+        <label for="ai-toggle"><strong>Enable Local AI Explanations</strong></label>
+      </div>
+
+      <div class="form-group">
+        <label>LM Studio OpenAI-Compatible Endpoint:</label>
+        <input type="text" id="lm-endpoint" value="http://localhost:1234/v1/chat/completions">
+      </div>
+
+      <div class="form-group">
+        <label>Model Identifier:</label>
+        <input type="text" id="lm-model" value="local-model">
+      </div>
+
+      <button id="test-lm-btn" class="btn secondary">Test LM Studio Connection</button>
+      <span id="test-status" class="status-msg"></span>
+    </div>
+
+    <div class="card actions-card">
+      <button id="save-settings-btn" class="btn primary">Save Changes</button>
+      <span id="save-confirm" class="confirm-msg"></span>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

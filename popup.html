@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SafeNotice Shield</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-group">
+        <div class="shield-icon">🛡️</div>
+        <div>
+          <h1 class="title">SafeNotice</h1>
+          <p class="subtitle">Student CyberSafe Shield</p>
+        </div>
+      </div>
+      <label class="switch" title="Toggle automatic scanning">
+        <input type="checkbox" id="toggle-scan" checked>
+        <span class="slider round"></span>
+      </label>
+    </header>
+
+    <!-- Host info banner -->
+    <div class="host-banner">
+      <span>Current Page:</span>
+      <strong id="current-host">Scanning...</strong>
+    </div>
+
+    <!-- Summary Metrics -->
+    <div class="stats-grid">
+      <div class="stat-card verified">
+        <span class="stat-val" id="cnt-verified">0</span>
+        <span class="stat-label">Verified</span>
+      </div>
+      <div class="stat-card unknown">
+        <span class="stat-val" id="cnt-unknown">0</span>
+        <span class="stat-label">Unknown</span>
+      </div>
+      <div class="stat-card suspicious">
+        <span class="stat-val" id="cnt-suspicious">0</span>
+        <span class="stat-label">Suspicious</span>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="button-group">
+      <button id="btn-scan-now" class="btn btn-primary">Scan Current Page</button>
+      <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Report to National Cyber Portal</a>
+    </div>
+
+    <!-- Whitelist Configuration Preview -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Official College Whitelist</span>
+        <a href="#" id="link-options" class="settings-link">Manage</a>
+      </div>
+      <div class="add-domain-box">
+        <input type="text" id="input-domain" placeholder="e.g. yourcollege.edu" spellcheck="false">
+        <button id="btn-add-domain" class="btn-small">Add</button>
+      </div>
+      <ul id="domain-list" class="domain-chips"></ul>
+    </div>
+
+    <!-- Privacy Guarantee -->
+    <footer class="footer">
+      <p class="privacy-note">🔒 SafeNotice checks only the current page and does not collect or transmit your browsing history.</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
