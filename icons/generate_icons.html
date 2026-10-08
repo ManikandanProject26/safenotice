@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>SafeNotice Icon Generator</h3>
+  <canvas id="c16" width="16" height="16"></canvas>
+  <canvas id="c48" width="48" height="48"></canvas>
+  <canvas id="c128" width="128" height="128"></canvas>
+  <script>
+    [16, 48, 128].forEach(size => {
+      const c = document.getElementById('c' + size);
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#2563eb';
+      ctx.beginPath();
+      ctx.arc(size/2, size/2, size/2 - 1, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#ffffff';
+      ctx.font = `bold ${Math.floor(size * 0.6)}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('S', size/2, size/2);
+    });
+  </script>
+</body>
+</html>
